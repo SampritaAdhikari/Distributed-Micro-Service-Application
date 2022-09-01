@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+	<style>
+ table {
+     font-family: arial, sans-serif;
+     border-collapse: collapse;
+     width: 100%;
+ }
+ td, th {
+     border: 1px solid %dddddd;
+     text-align: left;
+     padding: Spx;
+  }
+
+  tr:nth-child(even) {
+      background-colour: %dddddd;
+  }
+
+</style>
+</head>
+<body>
+
+   <form method="POST">
+    <p>Enter Text</p><br>
+    <input name="text">
+     <input type="submit" value="Search">
+</form>
+    <a href="/update">
+		<p align="right">
+		<button>My button</button>
+		</p>
+	</a>
+
+
+	<h1>BOOKS.COM</h1>
+
+<table>
+   <tr>
+        <td><b>ID</b></td>           <td><b>Name</b></td>            <td><b>Rating</b></td>                     <td><b>Review</b></td>                <td><b>Tags</b></td>
+  </tr>
+
+
+	{% for item in y %}
+  <tr>
+     <td>{{item.ID}}</td>
+    <td>{{ item.Name }}</td>
+    <td>{{ item.Rating }}</td>
+	  <td>{{ item.Review}}</td>
+	  <td>{{ item.Tags }}</td>
+
+  </tr>
+{% endfor %}
+
+
+
+</table>
+</body>
+</html>

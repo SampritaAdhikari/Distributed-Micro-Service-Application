@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+
+    <title>UPDATE</title>
+
+</head>
+
+<body>
+  <form method="POST">
+      <p>Enter ID</p><br>
+    <input name="id">
+
+    <p>Enter Name</p><br>
+    <input name="name">
+
+      <p>Enter Ratings</p><br>
+    <input name="rat">
+
+      <p>Enter Review</p><br>
+    <input name="review">
+
+      <p>Enter Tags</p><br>
+    <input name="tags">
+
+     <input type="button" id="submit" value="Submit">
+
+  </form>
+
+<script>
+
+  document.getElementById('submit').addEventListener('click', (event) => {
+    event.preventDefault();
+    const data = new FormData(document.forms[0]);
+    fetch("/update", {
+      method: "POST",
+      body: data
+    })
+    .then((result) => {
+      if (result.status == 200) { window.location="/update" }
+    })
+    .catch((error) => { console.log(error); });
+});
+
+
+</script>
+
+
+</body>
+
